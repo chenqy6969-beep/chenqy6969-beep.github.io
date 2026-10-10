@@ -1,0 +1,16 @@
+{
+  "goals": [
+    {
+      "name": "AI学习",
+      "progress": 30
+    },
+    {
+      "name": "英语",
+      "progress": 45
+    },
+    {
+      "name": "专业课",
+      "progress": 60
+    }
+  ]
+}

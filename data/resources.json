@@ -1,0 +1,82 @@
+[
+  {
+    "id": "resource-0",
+    "category": "AI工具",
+    "name": "开源模型社区",
+    "description": "探索模型、数据集与演示应用。",
+    "url": "https://huggingface.co/",
+    "icon": "模"
+  },
+  {
+    "id": "resource-1",
+    "category": "AI工具",
+    "name": "魔搭社区",
+    "description": "查看模型资源与相关实践。",
+    "url": "https://www.modelscope.cn/",
+    "icon": "搭"
+  },
+  {
+    "id": "resource-2",
+    "category": "英语学习",
+    "name": "英国文化教育协会英语学习",
+    "description": "查找英语学习材料与练习。",
+    "url": "https://learnenglish.britishcouncil.org/",
+    "icon": "英"
+  },
+  {
+    "id": "resource-3",
+    "category": "英语学习",
+    "name": "剑桥词典",
+    "description": "查询词义、发音与例句。",
+    "url": "https://dictionary.cambridge.org/zhs/",
+    "icon": "词"
+  },
+  {
+    "id": "resource-4",
+    "category": "专业课资源",
+    "name": "中国大学慕课",
+    "description": "浏览高校课程与学习资源。",
+    "url": "https://www.icourse163.org/",
+    "icon": "课"
+  },
+  {
+    "id": "resource-5",
+    "category": "专业课资源",
+    "name": "麻省理工开放课程",
+    "description": "查找开放课程讲义和课程资料。",
+    "url": "https://ocw.mit.edu/",
+    "icon": "学"
+  },
+  {
+    "id": "resource-6",
+    "category": "效率工具",
+    "name": "笔记与协作空间",
+    "description": "整理笔记、任务和资料。",
+    "url": "https://www.notion.com/",
+    "icon": "记"
+  },
+  {
+    "id": "resource-7",
+    "category": "效率工具",
+    "name": "番茄专注计时",
+    "description": "为学习安排一段专注时间。",
+    "url": "https://pomofocus.io/",
+    "icon": "时"
+  },
+  {
+    "id": "resource-8",
+    "category": "其他",
+    "name": "古腾堡电子书计划",
+    "description": "浏览公版电子书收藏。",
+    "url": "https://www.gutenberg.org/",
+    "icon": "书"
+  },
+  {
+    "id": "resource-9",
+    "category": "其他",
+    "name": "互联网档案馆",
+    "description": "探索数字馆藏和网页存档。",
+    "url": "https://archive.org/",
+    "icon": "藏"
+  }
+]

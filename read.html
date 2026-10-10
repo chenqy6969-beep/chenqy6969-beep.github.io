@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e3eaee">
+<title>Seol 的记录</title>
+<!-- 主题脚本先运行，避免已选夜间模式时闪白；组件均保存在 vendor 目录，不访问外部脚本服务。 -->
+<!-- 直接进入文章页也算已进入主站；刷新与返回不重复显示封面。 -->
+<script>try{sessionStorage.setItem("seol-entered","1");}catch{}</script>
+<script src="./js/theme.js?v=lab-20261010-2"></script>
+<link rel="stylesheet" href="./css/style.css">
+<script defer src="./vendor/marked.js"></script>
+<script defer src="./vendor/purify.js"></script>
+<script defer src="./vendor/opencc.js"></script>
+<script defer src="./js/settings.js?v=lab-20261010-2"></script>
+<script defer src="./js/app.js?v=cover-state-1"></script>
+<link rel="stylesheet" href="./css/features.css?v=lab-20261010-2">
+<link rel="stylesheet" href="./css/cover-state.css?v=1">
+<link rel="stylesheet" href="./css/admin-entry.css?v=1">
+</head>
+<body data-page="read">
+<!-- 头像、名字、签名和社交地址均由 data/profile.json 填入。 -->
+<header class="mobile-bar"><div class="mobile-brand"><button class="avatar small" data-avatar aria-label="打开调色实验室" type="button">S</button><span data-name>Seol</span></div><button id="menu-toggle" class="menu-button" aria-controls="sidebar" aria-expanded="false" aria-label="打开导航">☰</button></header>
+<button class="menu-scrim" id="menu-scrim" aria-label="关闭导航" tabindex="-1" hidden></button>
+<aside id="sidebar" class="sidebar" aria-label="个人资料和导航">
+  <div class="sidebar-inner">
+    <div class="sidebar-top"><div class="profile-head"><button class="avatar" data-avatar aria-label="打开调色实验室" type="button">S</button><h1 data-name>Seol</h1><p id="signature">我是最棒的！</p></div>
+    <div id="socials" class="socials" aria-label="社交联系方式"></div>
+    <div class="stats" aria-label="记录统计"><a href="./index.html#archive"><b data-count="articles">—</b><span>文章</span></a><a href="./index.html#album"><b data-count="album">—</b><span>相册</span></a></div>
+    </div>
+    <nav id="nav" aria-label="主导航"><a href="./index.html#home" data-route="home">主 页</a><a href="./index.html#archive" data-route="archive">归 档</a><a href="./index.html#tags" data-route="tags">标 签</a><a href="./index.html#album" data-route="album">相 册</a><a href="./index.html#about" data-route="about">关 于</a><a href="./index.html#projects" data-route="projects">项 目</a><a href="./index.html#thoughts" data-route="thoughts">思 考</a><a href="./index.html#links" data-route="links">导 航</a></nav>
+    <div class="settings-buttons"><button id="language-toggle" title="简繁切换" aria-label="简繁切换">简／繁</button><button id="palette-toggle" title="调色盘" aria-label="调色盘">◉</button><button id="theme-toggle" title="夜间模式" aria-label="夜间模式">☾</button></div>
+    <a class="admin-entry" href="./admin.html" title="写作后台" aria-label="写作后台"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg></a>
+  </div>
+</aside>
+<main id="main" class="main reading"><a class="back" id="back-link" href="./index.html#thoughts">← 返回思考</a><article id="article" aria-live="polite"><p class="empty">正在翻开这一页…</p></article></main>
+<dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-bar"><h2 id="dialog-title">预览</h2><button id="dialog-close" aria-label="关闭弹窗">关闭 ×</button></div><div id="dialog-content"></div><div id="media-switch" class="media-switch" hidden><button id="previous" aria-label="上一张">←</button><span id="media-number"></span><button id="next" aria-label="下一张">→</button></div></dialog>
+<div class="site-tools"><button id="collapse-toggle" aria-label="折叠资料栏" aria-expanded="true">☰</button><button id="search-toggle" aria-label="搜索文章">⌕ <span>搜索</span></button></div>
+<button id="back-top" aria-label="回到顶部" hidden>↑</button><div id="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+<dialog id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-bar"><h2 id="settings-title">设置</h2><button data-close-settings>关闭 ×</button></div><div id="settings-content"></div></dialog>
+<dialog id="search-dialog" aria-labelledby="search-title"><div class="dialog-bar"><h2 id="search-title">搜索文章</h2><button data-close-search>关闭 ×</button></div><input id="search-input" type="search" placeholder="输入标题、摘要或标签" role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list" autocomplete="off"><p id="search-status" role="status"></p><div id="search-results" role="listbox" aria-label="搜索结果"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

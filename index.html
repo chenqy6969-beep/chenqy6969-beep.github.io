@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e3eaee">
+<title>Seol 的记录</title>
+<!-- 主题脚本先运行，避免已选夜间模式时闪白；组件均保存在 vendor 目录，不访问外部脚本服务。 -->
+<script src="./js/cover-state.js?v=1"></script>
+<script src="./js/theme.js?v=lab-20261010-2"></script>
+<link rel="stylesheet" href="./css/style.css">
+<script defer src="./vendor/marked.js"></script>
+<script defer src="./vendor/purify.js"></script>
+<script defer src="./vendor/opencc.js"></script>
+<script defer src="./js/settings.js?v=lab-20261010-2"></script>
+<!-- 标签物理引擎本地引用，不依赖 CDN。 -->
+<script defer src="./vendor/matter.min.js"></script>
+<script defer src="./js/tag-physics.js?v=2"></script>
+<script defer src="./js/app.js?v=cover-state-1"></script>
+<script defer src="./js/cover.js?v=state-1"></script>
+<link rel="stylesheet" href="./css/features.css?v=lab-20261010-2">
+<link rel="stylesheet" href="./css/tags.css?v=1">
+<link rel="stylesheet" href="./css/cover-state.css?v=1">
+<link rel="stylesheet" href="./css/admin-entry.css?v=1">
+</head>
+<body data-page="feed">
+<!-- 第一屏保留花海封面；记录区在封面之后，不再直接顶到页面开头。 -->
+<canvas id="cover-flowers" aria-hidden="true"></canvas>
+<section id="cover" class="cover-screen" aria-labelledby="cover-title">
+  <header class="cover-header"><span class="cover-brand" data-name>Seol</span><span>微风经过 · 盛夏正好</span></header>
+  <div class="cover-copy">
+    <p class="cover-kicker" id="cover-kicker">一些日常，一些值得留下的瞬间</p>
+    <h1 id="cover-title">Hi,我是Seol<br><em>我会在这里记录下我的成长和平凡的日子</em></h1>
+    <p id="cover-intro" class="cover-intro">May we all become people of courage.</p>
+    <a class="cover-enter" href="#home">进入我的记录 <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="cover-footer"><span>花开有时，记录随心</span><button id="cover-motion" type="button" aria-pressed="false">暂停微风</button></div>
+</section>
+<!-- 头像、名字、签名和社交地址均由 data/profile.json 填入。 -->
+<header class="mobile-bar"><div class="mobile-brand"><button class="avatar small" data-avatar aria-label="打开调色实验室" type="button">S</button><span data-name>Seol</span></div><button id="menu-toggle" class="menu-button" aria-controls="sidebar" aria-expanded="false" aria-label="打开导航">☰</button></header>
+<button class="menu-scrim" id="menu-scrim" aria-label="关闭导航" tabindex="-1" hidden></button>
+<div id="records" class="records-layout">
+<aside id="sidebar" class="sidebar" aria-label="个人资料和导航">
+  <div class="sidebar-inner">
+    <div class="sidebar-top"><div class="profile-head"><button class="avatar" data-avatar aria-label="打开调色实验室" type="button">S</button><h1 data-name>Seol</h1><p id="signature">我是最棒的！</p></div>
+    <div id="socials" class="socials" aria-label="社交联系方式"></div>
+    <div class="stats" aria-label="记录统计"><a href="./index.html#archive"><b data-count="articles">—</b><span>文章</span></a><a href="./index.html#album"><b data-count="album">—</b><span>相册</span></a></div>
+    </div>
+    <nav id="nav" aria-label="主导航"><a href="./index.html#home" data-route="home">主 页</a><a href="./index.html#archive" data-route="archive">归 档</a><a href="./index.html#tags" data-route="tags">标 签</a><a href="./index.html#album" data-route="album">相 册</a><a href="./index.html#about" data-route="about">关 于</a><a href="./index.html#projects" data-route="projects">项 目</a><a href="./index.html#thoughts" data-route="thoughts">思 考</a><a href="./index.html#links" data-route="links">导 航</a></nav>
+    <div class="settings-buttons"><button id="language-toggle" title="简繁切换" aria-label="简繁切换">简／繁</button><button id="palette-toggle" title="调色盘" aria-label="调色盘">◉</button><button id="theme-toggle" title="夜间模式" aria-label="夜间模式">☾</button></div>
+    <a class="admin-entry" href="./admin.html" title="写作后台" aria-label="写作后台"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg></a>
+  </div>
+</aside>
+<main id="main" class="main"><header class="page-heading"><p class="date-mark" id="page-mark">我的记录</p><h2 id="page-title" tabindex="-1">主页</h2><p id="page-description">把日常，慢慢收好。</p></header><div id="feed" class="feed" aria-live="polite"><p class="empty">正在整理记录…</p></div></main>
+</div>
+<dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-bar"><h2 id="dialog-title">预览</h2><button id="dialog-close" aria-label="关闭弹窗">关闭 ×</button></div><div id="dialog-content"></div><div id="media-switch" class="media-switch" hidden><button id="previous" aria-label="上一张">←</button><span id="media-number"></span><button id="next" aria-label="下一张">→</button></div></dialog>
+<div class="site-tools"><button id="collapse-toggle" aria-label="折叠资料栏" aria-expanded="true">☰</button><button id="search-toggle" aria-label="搜索文章">⌕ <span>搜索</span></button></div>
+<button id="back-top" aria-label="回到顶部" hidden>↑</button><div id="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+<dialog id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-bar"><h2 id="settings-title">设置</h2><button data-close-settings>关闭 ×</button></div><div id="settings-content"></div></dialog>
+<dialog id="search-dialog" aria-labelledby="search-title"><div class="dialog-bar"><h2 id="search-title">搜索文章</h2><button data-close-search>关闭 ×</button></div><input id="search-input" type="search" placeholder="输入标题、摘要或标签" role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list" autocomplete="off"><p id="search-status" role="status"></p><div id="search-results" role="listbox" aria-label="搜索结果"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

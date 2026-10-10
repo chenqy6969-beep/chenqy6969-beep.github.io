@@ -1,0 +1,34 @@
+/* 只影响标签页；花海、封面和全站配色保持原样。 */
+.feed.tags-physics-feed { display:block; }
+.tag-arena {
+  position:relative; height:70vh; height:70svh; min-height:320px;
+  overflow:hidden; border-radius:28px;
+  background:linear-gradient(145deg,rgba(226,236,240,.32),rgba(225,219,240,.23));
+  backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px);
+  box-shadow:0 8px 30px rgba(42,61,78,.035);
+}
+.falling-tag {
+  position:absolute; top:0; left:0; visibility:hidden;
+  padding:12px 19px; min-height:44px; box-sizing:border-box; white-space:nowrap;
+  border-radius:13px; background:rgba(231,227,244,.86); color:var(--ink);
+  box-shadow:0 3px 9px rgba(36,56,71,.07); backdrop-filter:blur(8px);
+  line-height:1.4; text-decoration:none; font-weight:400; letter-spacing:.025em;
+  transform-origin:center; /* 不给 transform 加过渡，确保碰撞与画面同步。 */
+}
+.falling-tag:nth-child(even) {background:rgba(219,232,240,.86)}
+.falling-tag.has-fallen {visibility:visible}
+.falling-tag.size-1 {font-size:14px}
+.falling-tag.size-2 {font-size:18px}
+.falling-tag.size-3 {font-size:22px}
+.falling-tag:focus-visible {outline:3px solid var(--accent); outline-offset:-3px}
+.tag-arena.is-static {display:flex; flex-wrap:wrap; align-content:flex-end; gap:12px; padding:20px; box-sizing:border-box; overflow:auto}
+.tag-arena.is-static .falling-tag {position:relative; top:auto; left:auto}
+:root[data-theme="dark"] .tag-arena {background:linear-gradient(145deg,rgba(42,61,77,.3),rgba(64,57,83,.24))}
+:root[data-theme="dark"] .falling-tag {background:rgba(72,67,91,.91)}
+:root[data-theme="dark"] .falling-tag:nth-child(even) {background:rgba(53,73,88,.91)}
+@media(max-width:760px) {
+  .tag-arena {border-radius:20px;min-height:360px}
+  .falling-tag {padding:12px 14px}
+  .falling-tag.size-2 {font-size:16px}
+  .falling-tag.size-3 {font-size:19px}
+}

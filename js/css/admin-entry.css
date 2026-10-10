@@ -1,0 +1,2 @@
+/* 后台入口不放进主导航；图标小，点击区域仍可触屏操作。 */
+.admin-entry{display:flex;align-items:center;justify-content:center;min-height:40px;width:40px;align-self:center;margin:2px auto 6px;color:var(--muted);opacity:.65;border-radius:50%}.admin-entry:hover,.admin-entry:focus-visible{opacity:1;background:var(--hover)}

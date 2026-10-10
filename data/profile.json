@@ -1,0 +1,45 @@
+{
+  "name": "Seol",
+  "signature": "我是最棒的！",
+  "avatar": "./media/photos/avatar.jpg",
+  "avatarLetter": "S",
+  "sidebarImage": "./media/flowers/flower1.png",
+  "defaultCover": "./media/flowers/flower4.png",
+  "about": [
+    "这里放几句关于我的介绍。",
+    "可以写最近喜欢的事、正在做的事，也可以留下一句此刻想说的话。"
+  ],
+  "social": {
+    "wechatQRCode": "./media/photos/wechat.jpg",
+    "email": "chenqy6969@gmail.com",
+    "xiaohongshu": "https://xhslink.cn/o/AcGQnlRYhfL",
+    "douyin": "https://v.douyin.com/XQ62wM-TR-8/",
+    "x": "https://x.com/JISOOOOCQY"
+  },
+  "pageDescriptions": {
+    "home": "把日常，慢慢收好。",
+    "notes": "一些短短的念头，一些小小的日常。",
+    "album": "把一瞬间，留成很久",
+    "thoughts": "给还没想明白的事，留一点时间",
+    "about": "在平凡的日子里，慢慢成为自己",
+    "archive": "把日子一页页收好",
+    "tags": "给日子贴标签",
+    "projects": "让想法慢慢长出形状",
+    "links": "沿着好奇，遇见更远的世界"
+  },
+  "cover": {
+    "kicker": "一些日常，一些值得留下的瞬间",
+    "title": "Hi,我是Seol",
+    "titleAccent": "我会在这里记录下我的成长和平凡的日子",
+    "intro": "May we all become people of courage.",
+    "button": "进入我的记录"
+  },
+  "categories": [
+    "AI学习",
+    "读书",
+    "英语",
+    "专业课",
+    "做的事",
+    "碎碎念"
+  ]
+}

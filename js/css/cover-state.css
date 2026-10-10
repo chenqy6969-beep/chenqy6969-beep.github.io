@@ -1,0 +1,9 @@
+/* 主站状态下封面不占任何空间，向上滚动只能到主站顶部。 */
+html[data-cover-state="main"] #cover {display:none}
+html[data-cover-state="leaving"] #cover {z-index:30;pointer-events:none}
+html[data-cover-state="cover"] #records {visibility:hidden}
+html[data-cover-state="cover"] .top-tools {visibility:hidden}
+.name-jump {position:relative}
+.name-jump::after {content:"回到封面";position:absolute;top:100%;left:50%;transform:translateX(-50%);white-space:nowrap;font:12px/1.8 sans-serif;letter-spacing:.08em;padding:4px 10px;border-radius:9px;background:var(--card);color:var(--ink);opacity:0;pointer-events:none;transition:opacity .3s}
+.name-jump:hover::after,.name-jump:focus-visible::after {opacity:1}
+@media(prefers-reduced-motion:reduce){.name-jump::after{transition:none}}

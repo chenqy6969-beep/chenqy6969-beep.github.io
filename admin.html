@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>写作后台 · Seol</title>
+<script src="./js/theme.js"></script><link rel="stylesheet" href="./css/style.css"><link rel="stylesheet" href="./css/admin.css?v=1">
+<script defer src="./vendor/marked.js"></script><script defer src="./vendor/purify.js"></script><script defer src="./js/github-publish.js?v=1"></script><script defer src="./js/admin.js?v=publish-1"></script></head>
+<body class="admin-page"><main class="admin-shell">
+<header class="admin-header"><div><p class="eyebrow">把日子写下来</p><h1>写作后台</h1></div><a class="soft-button" href="./index.html#home">返回网站 ↗</a></header>
+<section class="panel"><h2>保存与发布</h2><label for="publishing-mode">发布方式</label><select id="publishing-mode"><option value="local">本地文件夹 / 下载文件</option><option value="github">发布到 GitHub</option></select>
+<div id="github-settings" hidden><div class="form-grid"><label>GitHub 用户名<input id="github-owner" value="chenqy6969-beep" autocomplete="off"></label><label>网站仓库<input id="github-repo" value="chenqy6969-beep.github.io" autocomplete="off"></label><label>分支<input id="github-branch" value="main" autocomplete="off"></label><label>发布凭证<input id="github-token" type="password" autocomplete="off" placeholder="只在本次打开期间使用，不写入网站文件"></label></div><div class="actions"><button id="github-connect">连接并读取线上文章</button><button id="github-forget">清除发布凭证</button></div><p class="hint">凭证仅需此网站仓库的 Contents 读写权限。请在此处填写，不要发到聊天里。发布后 GitHub Pages 还需完成构建；显示“已提交”不等于已经上线。</p><a id="github-build" target="_blank" rel="noopener noreferrer" hidden>查看部署进度 ↗</a></div></section>
+<section class="panel connection" id="local-settings"><div><h2>我的网站文件夹</h2><p id="folder-state">正在读取记录…</p></div><div class="actions"><button id="pick-folder">选择网站文件夹</button><button id="reconnect" hidden>重新授权</button><button id="download-mode">使用下载方式</button></div><p class="hint">发布到本地网站文件夹；线上网站需要你之后重新部署。锁形入口不是登录验证。</p></section>
+<p id="status" role="status" aria-live="polite"></p>
+<section class="panel"><h2>快速碎碎念</h2><label for="quick">此刻，想记下什么？</label><textarea id="quick" rows="3" placeholder="今天的一点小发现……"></textarea><div class="actions"><button id="quick-publish" class="primary">发布碎碎念</button><button id="quick-edit" hidden>继续编辑刚发布的这条</button><span class="hint">自动填写日期和标题，也会保存草稿。</span></div></section>
+<section class="panel"><div class="section-heading"><h2 id="editor-title">写一篇新文章</h2><button id="new-post" type="button">新建文章</button></div>
+<form id="editor"><div class="form-grid">
+<label>标题<input id="title" required maxlength="160"></label><label>日期<input id="date" type="date" required></label>
+<label>分类<select id="category"><option>AI学习</option><option>读书</option><option>英语</option><option>专业课</option><option>做的事</option><option>碎碎念</option></select></label>
+<div><label for="tags">标签</label><span id="tag-choices" class="tag-choices"></span><input id="tags" placeholder="可输入新标签，用逗号分隔"></div>
+<label class="full">摘要<textarea id="excerpt" rows="2"></textarea></label>
+<label class="full">封面图（可选）<input id="cover" placeholder="例如 ./images/照片.jpg 或完整图片地址"><span class="actions"><button id="choose-cover" type="button">选择本地封面</button></span></label></div>
+<div class="writing-grid"><div><label for="body">正文</label><div class="toolbar" role="toolbar" aria-label="正文格式">
+<button type="button" data-tool="heading">二级标题</button><button type="button" data-tool="bold">粗体</button><button type="button" data-tool="list">列表</button><button type="button" data-tool="quote">引用</button><button type="button" data-tool="code">代码</button><button type="button" data-tool="link">链接</button><button type="button" id="insert-image">插入图片</button></div>
+<textarea id="body" rows="22" required placeholder="从今天开始记录……"></textarea></div><div><h3>实时预览</h3><article id="preview" class="preview article-text"></article></div></div>
+<div class="actions"><button type="button" id="save-draft">保存草稿</button><button type="submit" id="publish" class="primary">发布文章</button><span id="draft-state" class="hint">草稿自动保存在这台设备</span></div></form></section>
+<section class="panel"><div class="section-heading"><h2>管理文章</h2><input id="search" type="search" aria-label="搜索文章" placeholder="搜索标题、分类、标签"></div><p id="list-count" class="hint"></p><div id="post-list"></div></section>
+<section class="panel" id="exports" hidden><h2>下载待替换文件</h2><p>尚未写入网站。请逐个下载，按标注路径放入网站文件夹，最后替换索引。不要把浏览器自动添加的“(1)”留在文件名里。</p><div id="export-links"></div><div class="actions"><button id="export-done">我已替换全部文件</button><button id="export-cancel">取消本次导出</button></div></section>
+<input type="file" id="image-file" accept="image/*" hidden>
+</main></body></html>
